@@ -1,0 +1,17 @@
+<h1>Department:</h1>
+
+<%= link_to "Create Departments", new_department_path %>
+<table>
+  <thead>
+    <tr>
+      <th>Subject</th>
+    </tr>
+    <thead>
+      <tbody>
+<%= @departments.each do |department| %>
+<tr>
+<td><%= link_to department.subject, department_path(department) %></td>
+</tr>
+<% end %>
+</tbody>
+</table>
