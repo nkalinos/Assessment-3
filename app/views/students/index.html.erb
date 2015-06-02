@@ -1,0 +1,19 @@
+<h1>Students:</h1>
+
+<%= link_to "Create Students", new_student_path %>
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+    </tr>
+    <thead>
+      <tbody>
+<%= @students.each do |student| %>
+<tr>
+<td><%= link_to student.first_name, student_path(student) %></td>
+<td><%= student.last_name %></td>
+</tr>
+<% end %>
+</tbody>
+</table>
