@@ -1,0 +1,19 @@
+<h1>Instructors:</h1>
+
+<%= link_to "Create Instructors", new_instructor_path %>
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+    </tr>
+    <thead>
+      <tbody>
+<%= @instructors.each do |instructor| %>
+<tr>
+<td><%= link_to instructor.first_name, instructor_path(instructor) %></td>
+<td><%= instructor.last_name %></td>
+</tr>
+<% end %>
+</tbody>
+</table>
