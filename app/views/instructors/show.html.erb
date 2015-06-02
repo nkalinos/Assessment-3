@@ -3,3 +3,21 @@
 <%= link_to "Edit", edit_instructor_path %>
 
 <%= link_to 'Delete', instructor_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Department</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <%= form_for [@department, @instructor] do |f| %>
+
+      <td> <%= collection_select( :department, :department_id, Department.all, :id, :subject, {}, ) %></td>
+      <td><%= f.submit %></td>
+
+      <% end %>
+    </tr>
+  </tbody>
+</table>

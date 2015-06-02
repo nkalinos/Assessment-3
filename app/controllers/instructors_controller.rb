@@ -2,10 +2,12 @@ class InstructorsController < ApplicationController
 
   def index
     @instructors = Instructor.all
+    @departments = Department.all
   end
 
   def new
     @instructor = Instructor.new
+    @department = Department.new
   end
   def show
     @instructor = Instructor.find(params[:id])

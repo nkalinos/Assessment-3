@@ -43,7 +43,7 @@ class DepartmentsController < ApplicationController
 
   private
     def department_params
-      params.require(:department).permit(:subject)
+      params.require(:department).permit(:subject, :student_id, :instructor_id)
     end
 
 end
